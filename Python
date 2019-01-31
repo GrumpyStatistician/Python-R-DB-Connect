@@ -1,0 +1,26 @@
+import pandas as pd
+import sqlalchemy as sql
+import os
+
+
+###Create working directory. Remember, when setting your working directory, Python uses \\ instead of \
+os.chdir('C:\\USERS\\DESKTOP\\WHATEVER_FOLDER')
+
+####Create Connection
+SQL_engine = sql.create_engine("mssql+pyodbc://YOUR_SERVER_NAME/YOUR_DATABASE NAME?driver=SQL+Server+Native+Client+10.0")
+
+###Query and Create DF
+df=pd.read_sql(sql=''' 
+
+SELECT
+FROM
+WHERE
+GROUP BY
+ORDER BY
+
+	 ''', con=SQL_engine)
+   
+###Write to Excel?
+writer = pd.ExcelWriter('Data.xlsx')
+df.to_excel(writer,'Data')
+writer.save()
