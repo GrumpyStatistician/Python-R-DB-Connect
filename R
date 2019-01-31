@@ -1,0 +1,30 @@
+library(RevoUtilsMath)
+library(RODBC)
+library(tidyverse)
+library(utils)
+
+
+
+### Set your working directory. Remember, R uses / instead of \
+setwd("C:/USERS/DESKTOP/WHATEVER_FOLDER")
+
+
+computer_name = "YOUR_COMPUTER_NAME_HERE"
+
+
+cn <- odbcDriverConnect(connection = 
+                          paste( "Driver={SQL Server};
+                                  server=SERVER_NAME_HERE;
+                                  wsid=",computer_name,";
+                                  database=Arrest_IC;
+                                  trusted_connection=true",
+                                 sep = "")
+                        )
+
+#### write to df
+df <- sqlQuery(cn, paste("SELECT
+                          FROM 
+                          WHERE
+                          GROUP BY
+                          ORDER BY ")
+                          )
