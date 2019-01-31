@@ -16,7 +16,7 @@ cn <- odbcDriverConnect(connection =
                           paste( "Driver={SQL Server};
                                   server=SERVER_NAME_HERE;
                                   wsid=",computer_name,";
-                                  database=Arrest_IC;
+                                  database=YOUR_DATABASE_HERE;
                                   trusted_connection=true",
                                  sep = "")
                         )
