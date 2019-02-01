@@ -24,3 +24,34 @@ ORDER BY
 writer = pd.ExcelWriter('Data.xlsx')
 df.to_excel(writer,'Data')
 writer.save()
+
+
+
+#########################CONNECT USING PYODBC WITH USER/PASS
+
+import pandas as pd
+import pyodbc
+
+
+
+SQL_engine = pyodbc.connect('DRIVER={SQL Server};SERVER=YOUR_SERVER_\SQL2012;DATABASE=YOUR_DATABSE;UID=YOUR_USER;PWD=YOUR_PASS')
+
+
+
+
+df=pd.read_sql('''
+
+
+
+SELECT
+FROM 
+WHERE 
+GROUPBY
+    
+
+
+
+''', con=SQL_engine)
+
+
+
